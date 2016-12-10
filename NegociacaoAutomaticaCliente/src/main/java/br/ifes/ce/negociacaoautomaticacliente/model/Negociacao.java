@@ -5,10 +5,13 @@
  */
 package br.ifes.ce.negociacaoautomaticacliente.model;
 
+import java.util.Set;
+
 /**
  *
  * @author Ricardo
  */
 public class Negociacao {
+    private Set<Pessoa> pessoas;
     
 }

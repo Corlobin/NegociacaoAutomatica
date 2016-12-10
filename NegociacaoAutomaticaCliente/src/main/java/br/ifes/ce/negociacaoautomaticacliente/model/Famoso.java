@@ -16,6 +16,8 @@ public abstract class Famoso extends Pessoa {
     
     private String biografia;
     private Set<Filme> filmes;
+    
+    private Long nota;
 
     public Set<Filme> getFilmes() {
         return filmes;
@@ -31,6 +33,14 @@ public abstract class Famoso extends Pessoa {
 
     public String getBiografia() {
         return biografia;
+    }
+
+    public Long getNota() {
+        return nota;
+    }
+
+    public void setNota(Long nota) {
+        this.nota = nota;
     }
         
     

@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ifes.ce.negociacaoautomaticacliente.model;
+package br.ifes.ce.negociacaoautomaticaservico.model;
 
 /**
  *
  * @author Ricardo
  */
-public class Diretor extends Famoso {
+public class Contraproposta {
+    private String texto;
+    
 }
