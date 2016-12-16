@@ -20,6 +20,7 @@ public class Servico {
     private HashMap<String, String > solucaoParcial = new HashMap<>();
     private Set<String> clientes = new HashSet<>();
     private Stack pilha = new Stack();
+    private int totalIteracoes = 0;
     
     public String enviarInicializacao(String nome){
         if(!clientes.contains(nome)){
@@ -33,6 +34,8 @@ public class Servico {
     public String enviarDesligamento(String nome){
         if(clientes.contains(nome)){
             clientes.remove(nome);
+            totalIteracoes = 0;
+            pilha = new Stack();
             return "1";
         }
         else
@@ -76,6 +79,7 @@ public class Servico {
     public String enviarAcao(String acao)
     {
         pilha.push(acao);
+        totalIteracoes++;
         return acao;
     }
     public String receberAcao(){
@@ -85,6 +89,10 @@ public class Servico {
         return acao;
     }
     
+    public String iteracoes()
+    {
+        return totalIteracoes+"";
+    }
 
 
     

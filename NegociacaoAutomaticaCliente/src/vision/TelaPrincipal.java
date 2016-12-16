@@ -25,6 +25,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     
     private DefaultListModel listModel;
     private ServicoController servico;
+    private int minhasTentativas = 0;
     public TelaPrincipal() {
 
         initComponents();
@@ -40,20 +41,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 model[j].addElement(i);
             }
         }
-        jComboBox1.setModel(model[0]);
-        jComboBox2.setModel(model[1]);
-        jComboBox3.setModel(model[2]);
-        jComboBox4.setModel(model[3]);
-        jComboBox5.setModel(model[4]);
-        jComboBox6.setModel(model[5]);
+        cbAcao.setModel(model[0]);
+        cbAventura.setModel(model[1]);
+        cbFiccao.setModel(model[2]);
+        cbTerror.setModel(model[3]);
+        cbGuerra.setModel(model[4]);
+        cbComedia.setModel(model[5]);
         listModel.setSize(30);
         jList1.setModel(listModel);
                 
-        pbStatusNegociacao.setValue(50);
+        pbStatusNegociacao.setValue(0);
         try{servico = new ServicoController();
         }catch(Exception ex){}
                 
-        
+
         
         
     }
@@ -80,12 +81,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        cbAcao = new javax.swing.JComboBox<>();
+        cbAventura = new javax.swing.JComboBox<>();
+        cbFiccao = new javax.swing.JComboBox<>();
+        cbTerror = new javax.swing.JComboBox<>();
+        cbGuerra = new javax.swing.JComboBox<>();
+        cbComedia = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
@@ -148,17 +149,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel9.setText("Comédia");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbAcao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbAventura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbFiccao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbTerror.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbGuerra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbComedia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel10.setText("Duração do Filme");
@@ -169,11 +170,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel13.setText("Médio");
 
-        jCheckBox3.setText("> 60 min < 120");
+        jCheckBox3.setText("> 90 min < 120");
 
         jLabel14.setText("Curto");
 
-        jCheckBox4.setText("<= 60");
+        jCheckBox4.setText("<= 90");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel12.setText("Diretores");
@@ -220,30 +221,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                     .addGap(8, 8, 8)
                                     .addComponent(jLabel8)
                                     .addGap(4, 4, 4)
-                                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cbGuerra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel9)
                                     .addGap(4, 4, 4)
-                                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cbComedia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(11, 11, 11)
                                     .addComponent(jLabel7)
                                     .addGap(4, 4, 4)
-                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(cbTerror, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel5)
                                     .addGap(4, 4, 4)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cbAventura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel6)
                                     .addGap(4, 4, 4)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(cbFiccao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(4, 4, 4)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(cbAcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -312,25 +313,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(2, 2, 2)
                                 .addComponent(jLabel4))
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbAcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
                                 .addComponent(jLabel5))
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbAventura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(3, 3, 3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
                                 .addComponent(jLabel6))
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbFiccao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
                                 .addComponent(jLabel7))
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(cbTerror, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(13, 13, 13)
@@ -364,7 +365,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(3, 3, 3)
                         .addComponent(jLabel8))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbGuerra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel18)))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,7 +377,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
                                 .addComponent(jLabel9))
-                            .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbComedia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel10)
                         .addGap(10, 10, 10)
@@ -430,7 +431,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             Runnable runnable = new Runnable() {
                 public void run(){
                     try{ 
-                        
                         String clientes = servico.receberClientes();
                         System.out.println(clientes);
                         int siz = clientes.split(";").length;
@@ -452,9 +452,90 @@ public class TelaPrincipal extends javax.swing.JFrame {
                              }
                          }
                         taNegociacao.append("Negociantes entraram na negociação...\n");
+//                        Thread.currentThread().interrupt();
+//                        adicionarMnesagens(1);
+
+                        int total = Integer.parseInt(servico.iteracoes());
+                        while(total <= 10){
+                            String acao = servico.receberAcao();
+                            
+                            if(acao.equals("aceito")){
+                                taNegociacao.append("A negociação foi aceita \n");
+                                break;
+                            }
+                            if(acao.equals("vazia")){
+                                servico.enviarAcao(generoMaior());
+                            }
+                            else {
+                                try {
+                                    String[] dividida = acao.split(";");
+                                    if(dividida.length > 0 ){
+                                        System.out.println(" " + dividida.length + " " + dividida[0]);
+                                        String[] co = dividida[0].split(":");
+                                        System.out.println(" " + co[0] + " " + co[1]);
+                                        int meuValor = getValorByGenero(co[0]);
+                                        System.out.println("--> " + meuValor + " " + co[1]);
+                                        if(meuValor >= Integer.parseInt(co[1])){
+                                            taNegociacao.append("Eu aceito a negociação\n");
+                                            servico.enviarAcao("aceito");
+                                            JOptionPane.showMessageDialog(null, "Genero escolhido: " + co[0]);
+                                            break;
+                                        }
+                                        else {
+                                            servico.enviarAcao(generoMaior());
+                                            if(minhasTentativas >= 2){
+                                                servico.enviarAcao("Terror");
+                                            }else if(minhasTentativas >= 4){
+                                                servico.enviarAcao("Comedia");
+                                            }else if(minhasTentativas >= 6){
+                                                servico.enviarAcao("Guerra");
+                                            }
+                                        }
+                                        switch(Integer.parseInt(servico.iteracoes())){
+                                            case 1:
+                                                
+                                                break;
+                                            case 2:
+                                                break;
+                                            case 3:
+                                                break;
+                                            case 4:
+                                                break;
+                                            case 5:
+                                                break;
+                                            case 6:
+                                                break;
+                                            case 7:
+                                                break;
+                                            case 8:
+                                                break;
+                                            case 9:
+                                                break;
+                                            case 10:
+                                                break;
+                                                
+                                        }
+                                        
+                                    }
+                                }catch(Exception ex){
+                                    System.out.println("" + ex.getMessage());
+                                }
+                                
+                                
+                            }
+                            if(!acao.equals("vazia"))
+                                taNegociacao.append("Eu quero " + acao + "\n");
+                            
+                            Thread.sleep(2000);
+                            
+                            pbStatusNegociacao.setValue(total*10);
+                            
+                            total = Integer.parseInt(servico.iteracoes());
+                            
+                        }
                         
-                        
-                        
+                        servico.enviarDesligamento(tfNomePessoa.getText());
+                        Thread.currentThread().interrupt();
                     }
                     catch(Exception ex){
                         System.out.println(" " + ex.getMessage());
@@ -471,7 +552,102 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+    
+    private int getValorByGenero(String genero) {
+        int retorno = -1;
+        if("Acao".equals(genero))
+            retorno = (int) cbAcao.getSelectedItem();
+        if("Aventura".equals(genero))
+            retorno = (int) cbAventura.getSelectedItem();
+        if("Ficcao".equals(genero))
+            retorno = (int) cbFiccao.getSelectedItem();
+        if("Terror".equals(genero))
+            retorno =  (int) cbTerror.getSelectedItem();
+        if("Guerra".equals(genero))
+            retorno = (int) cbGuerra.getSelectedItem();
+        if("Comedia".equals(genero))
+            retorno = (int) cbComedia.getSelectedItem();
+        return retorno;
+    }
+    private String generoMaior(){
+        String generoMaior = "";
+        int generoMaiorInt = -1;
+        int acao = (int) cbAcao.getSelectedItem();
+        int aventura = (int) cbAventura.getSelectedItem();
+        int ficcao = (int) cbFiccao.getSelectedItem();
+        int terror =  (int) cbTerror.getSelectedItem();
+        int guerra = (int) cbGuerra.getSelectedItem();
+        int comedia = (int) cbComedia.getSelectedItem();
 
+        
+        if( acao > generoMaiorInt){
+            generoMaiorInt = acao;
+            generoMaior = "Acao";
+        }
+        if( aventura > generoMaiorInt){
+            generoMaiorInt = aventura;
+            generoMaior = "Aventura";
+        }
+        if( ficcao > generoMaiorInt){
+            generoMaiorInt = ficcao;
+            generoMaior = "Ficcao";
+        }
+        if( terror > generoMaiorInt){
+            generoMaiorInt = terror;
+            generoMaior = "Terror";
+        }
+        if( guerra > generoMaiorInt){
+            generoMaiorInt = guerra;
+            generoMaior = "Guerra";
+        }
+        if( comedia > generoMaiorInt){
+            generoMaiorInt = comedia;
+            generoMaior = "Comedia";
+        }
+
+        return (generoMaior + ":" + generoMaiorInt);
+        
+    }
+    
+    public void adicionarMnesagens(int rand) throws InterruptedException{
+        
+        if(rand == 1){
+            taNegociacao.append("Eu quero terror");
+            Thread.sleep(1000);
+            taNegociacao.append("Eu quero terror longo");
+            Thread.sleep(1300);
+            taNegociacao.append("Eu aceito a negociacao");
+            Thread.sleep(1500);
+        }
+
+        if(rand == 2){
+            taNegociacao.append("Eu quero aventura");
+            Thread.sleep(1200);
+            taNegociacao.append("Eu quero aventura");
+            Thread.sleep(1600);
+            taNegociacao.append("Eu aceito a negociacao");
+        }
+
+        if(rand == 3){
+            taNegociacao.append("Eu quero comedia");
+            Thread.sleep(1000);
+            taNegociacao.append("Eu quero terror");
+            Thread.sleep(1200);
+            taNegociacao.append("Eu quero acao");
+            Thread.sleep(1400);
+            taNegociacao.append("Eu quero aventura");
+            Thread.sleep(1500);
+            taNegociacao.append("Eu quero ficcao");
+            Thread.sleep(1600);
+            taNegociacao.append("Eu quero ficcao medio");
+            Thread.sleep(1200);
+            taNegociacao.append("Eu quero aventura medio");
+            Thread.sleep(1300);
+            taNegociacao.append("Eu rejeito a negociacao");
+        }
+
+    }
+    
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
         try{
@@ -520,17 +696,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbAcao;
+    private javax.swing.JComboBox<String> cbAventura;
+    private javax.swing.JComboBox<String> cbComedia;
+    private javax.swing.JComboBox<String> cbFiccao;
+    private javax.swing.JComboBox<String> cbGuerra;
+    private javax.swing.JComboBox<String> cbTerror;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JLabel jLabel1;

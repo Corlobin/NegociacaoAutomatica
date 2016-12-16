@@ -82,4 +82,12 @@ public class AxisController {
         OMElement method = fac.createOMElement("receberAcao", omNs);        
         return method;
     }
+    
+    public static OMElement serviceIteracoes() 
+    {
+        OMFactory fac = OMAbstractFactory.getOMFactory();
+        OMNamespace omNs = fac.createOMNamespace("http://quickstart.samples/xsd","NegociacaoAutomatica");
+        OMElement method = fac.createOMElement("iteracoes", omNs);        
+        return method;
+    }
 }

@@ -191,4 +191,31 @@ public class ServicoController
         }
         
     }
+    
+    public String iteracoes() throws Exception
+    {
+        try
+        {
+            OMElement payload = AxisController.serviceReceberAcao();
+            Options options = new Options();
+            options.setTo(targetEPR);
+            options.setAction("urn:iteracoes");
+            TestCallback axisCallback = new TestCallback("iteracoes") ;
+
+            sender.setOptions(options);
+            sender.sendReceiveNonBlocking(payload, axisCallback);
+
+            while ( ! axisCallback.isComplete( ) ) 
+            {
+                Thread.sleep(100);
+            }        
+            
+            return axisCallback.getResult();
+        }
+        catch(Exception ex)
+        {
+            throw ex;
+        }
+        
+    }
 }
